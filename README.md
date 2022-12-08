@@ -1,2 +1,2 @@
 # nddszy.github.io
-My Blog Website
+www.nddszy.github.io
