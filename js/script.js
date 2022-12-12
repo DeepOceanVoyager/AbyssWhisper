@@ -3,9 +3,10 @@ const abyss = document.getElementById("abyss"); //根据id获取输入元素
 const context = document.getElementById("context"); //根据id获取输入元素
 const url = "https://api.github.com/repos/nddszy/nddszy.github.io/issues?filter=updated";
 var codeStr = null; //从github获得的密文
+var keyStr = null; //用户输入的密钥
 
 if (trigger){
-    trigger.addEventListener("click", getKey);
+    trigger.addEventListener("click", getCodeFromGit);
 }
 
 if (abyss) {
@@ -13,7 +14,7 @@ if (abyss) {
 }
 
 var clickCount = 0;
-function getKey() {
+function getCodeFromGit() {
     clickCount++;
     if (clickCount == 3) {
         clickCount = 0;
@@ -27,15 +28,23 @@ function getKey() {
                     console.log("访问失效");
                 }
             });
+            getKey();
         }
         else {
+            getKey();
             ShowStr();
         }
     } 
 }
 
+function getKey() {
+    var key = prompt("请输入密钥：");
+    if (key) {
+        keyStr = key;
+    }
+}
+
 function ShowStr() {
-    var keyStr = prompt("请输入密钥：");
     if (keyStr && codeStr) {
         context.innerHTML = fromCode(codeStr, keyStr);
         alert("尘封的秘密已经浮现");
@@ -50,7 +59,7 @@ function getCode() {
     callCount++;
     if (callCount == 3) {
         callCount = 0;
-        var keyStr = prompt("请输入密钥：");
+        getKey();
         var contentStr = prompt("请输入谜底：");
         if (keyStr && contentStr) {
             context.innerHTML = toCode(contentStr, keyStr);
