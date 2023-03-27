@@ -62,7 +62,14 @@ function getCode() {
         getKey();
         var contentStr = prompt("请输入谜底：");
         if (keyStr && contentStr) {
-            context.innerHTML = toCode(contentStr, keyStr);
+            var strArroy=contentStr.split(/[(\r\n)\r\n]+/); //根据换行符拆分成数组 
+            strArray.forEach((item,index)=>{
+                if(!item){
+                      strArray.splice(index,1);
+                  }
+            }) //删除空项
+            var str=strArray.join("<br>");
+            context.innerHTML = toCode(str, keyStr);
             alert("阴暗的种子已经埋下");
         }
         else {
