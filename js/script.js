@@ -62,7 +62,7 @@ function getCode() {
         getKey();
         var contentStr = prompt("请输入谜底：");
         if (keyStr && contentStr) {
-            var strArroy=contentStr.split(/[(\r\n)\r\n]+/); //根据换行符拆分成数组 
+            var strArray=contentStr.split(/[(\r\n)\r\n]+/); //根据换行符拆分成数组 
             strArray.forEach((item,index)=>{
                 if(!item){
                       strArray.splice(index,1);
