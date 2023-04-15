@@ -1,2 +1,1 @@
-# nddszy.github.io
-https://nddszy.github.io
+<https://deepoceanvoyager.github.io/AbyssWhisper>
