@@ -1,7 +1,7 @@
 const trigger = document.getElementById("trigger"); //根据id获取输入元素
 const abyss = document.getElementById("abyss"); //根据id获取输入元素
 const context = document.getElementById("context"); //根据id获取输入元素
-const url = "https://api.github.com/repos/nddszy/nddszy.github.io/issues?filter=updated";
+const url = "https://api.github.com/repos/DeepOceanVoyager/AbyssWhisper/issues?filter=updated";
 var codeStr = null; //从github获得的密文
 var keyStr = null; //用户输入的密钥
 
